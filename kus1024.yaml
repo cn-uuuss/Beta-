@@ -1,0 +1,211 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+ipv6: false
+profile:
+  store-selected: false
+  tracing: false
+  store-fake-ip: false
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  default-nameserver:
+    - 119.29.29.29
+  nameserver:
+    - https://doh.pub/dns-query
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - "dns.msftncsi.com"
+    - "*.srv.nintendo.net"
+    - "*.stun.playstation.net"
+    - "xbox.*.microsoft.com"
+    - "*.xboxlive.com"
+  fallback:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+proxy-providers:
+  机场节点:
+  - name: 🇺🇸 United States 01
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16036
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 02
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16023
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 03
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16049
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 04
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16026
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 05
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16019
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 06
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16016
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 07
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16006
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 08
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16043
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 09
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16013
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 10
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16033
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 11
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16029
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 12
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16003
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 13
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16046
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 14
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16009
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+  - name: 🇺🇸 United States 15
+    type: ss
+    server: hwxi4weq.jogiyw.sbs
+    port: 16039
+    cipher: aes-128-gcm
+    password: nTY0Z0A3ikUoj_e6-O9Qj
+    udp: true
+proxies: #代理服务器
+- name: "设备01 US S5"
+    type: socks5
+    server: 66.128.194.215
+    port: 54640
+    username: fOz1ebhpLKnafC3
+    password: e64fudodiRzh7D5
+    tls: false
+    skip-cert-verify: true
+ - name: "设备02 US S5"
+    type: socks5
+    server: 161.77.233.147
+    port: 49423
+    username: jj8DcMX5sRuC5uF
+    password: vzFck5wOH8PGoGj
+    tls: false
+    skip-cert-verify: true
+    proxy-groups:
+     - 设备01  #链式代理名字 需要和下方name一样，默认即可，"此为目标节点"
+     - 设备02  #链式代理名字 需要和下方name一样，默认即可，"此为目标节点"
+     - 自动选择    #避免无法上网留的后手
+     - 负载均衡
+      # - 手动选择
+
+  # - name: 自动选择
+  #   type: url-test #选出延迟最低的机场前置节点
+  #   use:
+  #     - 机场前置节点    #proxy-providers中的名字，默认即可
+  #   url: "http://www.gstatic.com/generate_204"
+  #   interval: 300
+  #   tolerance: 50
+
+  - name: 负载均衡
+    type: load-balance #负载均衡
+    use:
+      - 机场前置节点
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+   #lazy: true
+   #disable-udp: true
+    strategy: round-robin #作为前置节点⽤这个⽐较好
+  
+  # - name: 手动选择
+  #   type: select #手动选择
+  #   use:
+  #     - 机场前置节点
+
+  # 代理链，目前 relay 可以支持 udp 的只有    vmess/vless/trojan/ss/ssr/tuic 
+  # wireguard目前不支持在relay中使用，请使用 proxy 中的 dialer-proxy 配置项
+  # 本地<->自动选择<->mysocks5<->网站
+ - name: 设备01    #链式代理名字，默认即可
+    type: relay
+    proxies:
+      - 负载均衡         #负载均衡模式
+      # - 手动选择         #手动选择机场前置节点模式
+      - 自动选择            #将自动选择的节点作为中转节点，上节这里是一个vmess协议的中转机
+      - 设备01 US S5           #你的自建节点name，可以在proxies添加自己的trojan vmess等节点
+    - name: 设备02    #链式代理名字，默认即可
+    type: relay
+    proxies:
+      - 负载均衡         #负载均衡模式
+      # - 手动选择         #手动选择机场前置节点模式
+      - 自动选择            #将自动选择的节点作为中转节点，上节这里是一个vmess协议的中转机
+      - 设备02 US S5           #你的自建节点name，可以在proxies添加自己的trojan vmess等节点
+
+
